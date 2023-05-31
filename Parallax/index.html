@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.parallax-container {
+  /* Full height */
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* makes the container a positioning context */
+}
+
+.parallax-image {
+  /* Max width and height */
+  width: 100%;
+  height: 100%;
+  /* Creating the parallax scrolling */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-text {
+  color: white;
+  font-size: 26px;
+  text-align: center;
+  position: absolute; /* Position within container */
+  top: 50%; /* Center the text */
+  left: 50%; /* Center the text */
+  transform: translate(-50%, -50%); /* center  of container*/
+}
+
+.parallax-text.text-left {
+  position: absolute;
+  top: 50%;
+  left: 25%; 
+  right: 0; 
+  transform: translate(-50%, -50%);
+  color: ghostwhite;
+  font-size: 20px;
+  z-index: 3;
+  max-width: calc(50%); /* Limit the text width the existing space */
+  overflow-wrap: break-word;
+}
+
+.parallax-text.text-right {
+  top: 24%;
+  right: 0; 
+  transform: translateY(-50%);
+  color: ghostwhite;
+  z-index: 3;
+  max-width: calc(50%); /* Limit the text width the existing space */
+  overflow-wrap: break-word;
+}
+
+.parallax-text2 {
+  color: white;
+  font-size: 26px;
+  text-align: center;
+  position: absolute; 
+  top: 30%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+ 
+}
+/*To make the text extend from the start to the end of the page*/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.full-width-text {
+  width: 100vw;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 53%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 47%;
+  height: 55%;
+  background-image: url('starforming.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; /* transparancy */
+  z-index: 2; /* image being on the background */
+}
+
+.overlay-image2 {
+  position: absolute;
+  top: 23%;
+  left: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 15%;
+  height: 20%;
+  background-image: url('arrow2.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; 
+  z-index: 5; 
+}
+
+.overlay-image3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 100%;
+  background-image: url('animationstar.gif');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9; 
+  z-index: 0; 
+}
+
+
+.overlay-image4 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 100%;
+  background-image: url('dwarf.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8; 
+  z-index: 2; 
+}
+
+
+/*Black menu bar on top*/
+.menu-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  z-index: 4; /* Ensures that the menu bar is on top of the page*/
+}
+.parallax-container:first-child {
+  margin-top: 40px; /* Making the margin-top to accommodate the menu bar */
+}
+
+.highlighted-text {
+  background-color: black;
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
+  z-index: 3;
+}
+
+</style>
+
+<style>
+.parallax-text.text-left p {
+    font-family: Times New Roman , sans-serif;
+  }
+/*Parallax affect process below*/
+</style>
+
+
+</head>
+<body>
+
+<div class="menu-bar">
+  <h1 style="margin: 0;">Our Universe</h1>
+</div>
+
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('stars5.jpg');"></div>
+  <div class="parallax-text">
+    <h1>Celestial Timelines</h1>
+    <p style="font-size: 20px;"> Dive into the enthralling tales of celestial marvels, ranging from the birthplaces of stars to the magnificent explosions of supernovae. Encounter the splendor of the cosmos in an unprecedented way, immersing yourself in its awe-inspiring grandeur.</p>
+  </div>
+</div>
+
+
+
+}
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('star1.jpg');"></div>
+  <div class="parallax-text text-left">
+    <p style="font-size: 25px; font-variant: !important;"> Stars begin as dense regions within interstellar gas and dust clouds, known as stellar nurseries.These clouds undergo gravitational collapse, triggered by factors like shockwaves from nearby supernovae or the gravitational interaction with other clouds.</p></div>
+  <div class="overlay-image"></div>
+  <div class="overlay-image2"></div>
+</div>
+
+
+
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('star3.jpg');"></div>
+  <div class="parallax-text text-right">
+    <p style= "font-size: 25px;" > When the core of a protostar reaches a critical temperature and pressure, the process of nuclear fusion begins, marking the start of the main sequence phase in a star's life. This phase, which is the longest and most stable, involves the fusion of hydrogen into helium in the core, enabling the star to generate energy.</p> </div>
+    <div class="overlay-image3"></div>
+</div>
+
+
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('sky.jpg');"></div>
+  <div class="parallax-text text-left">
+    <p style= "font-size: 23px;" > Throughout the main sequence phase, stars experience gradual transformations that depend on their initial mass. Low-mass stars, including our Sun, will eventually expand into red giants, shed their outer layers, and transform into white dwarfs. On the other hand, higher-mass stars can evolve into red supergiants, undergo explosive supernova events, and leave behind remnants such as neutron stars or black holes.</p> </div>
+    <div class="overlay-image4"> </div>
+</div>
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('stars6.jpg');"></div>
+  <div class="parallax-text2">
+  <div class="highlighted-text">
+  <div class="full-width-text">
+    <p style= "font-size: 23px;" > In the final stages of a star's lifecycle, what happens next is determined by its mass. Low-mass stars will shed their outer layers and become white dwarfs, which are dense and hot cores that gradually cool over billions of years. Conversely, high-mass stars conclude their lives with extraordinary supernova explosions, dispersing heavy elements into space and leaving behind remnants such as neutron stars or black holes.</p> </div>
+    <p style= "font-size: 20px;"> Subscribe to recieve more content about the universe!</p></div>
+    <div class="icon"> </div>
+
+
+    
+    <input type="email" placeholder="Enter your email">
+    <button type="submit">Subscribe</button>
+    
+
+</div>
+
+
+</body>
+</html>
