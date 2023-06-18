@@ -1,0 +1,160 @@
+
+<<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    .parallax-container {
+      /* Full height */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* makes the container a positioning context */
+    }
+
+    .parallax-image {
+      /* Max width and height */
+      width: 100%;
+      height: 100%;
+      /* Creating the parallax scrolling */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  .parallax-text {
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  position: absolute; /* Position within container */
+  top: 50%; /* Center the text */
+  left: 50%; /* Center the text */
+  transform: translate(-50%, -50%); /* center  of container*/
+  background-color: white;
+  display: inline-block;
+  padding: 5px;
+  width: 20%;
+}
+
+/* gif image to let the user know about the option to scroll*/
+.scroll-image {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 130px;
+      z-index: 2;
+}
+/*same menu bar of the main page*/
+.menu-bar {
+  position: fixed;
+  top: 0;
+  height:60px;
+  width: 100%;
+  color: white;
+  background-color: white;
+  z-index: 3; /* This ensures that the menu bar is on top of the page*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.parallax-container:first-child {
+  margin-top: 40px; /* Making the margin-top to accommodate the menu bar */
+}
+
+.logo {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      margin-top: 5%;
+      height: 70%;
+    }
+
+    .logo img {
+      width: auto;
+      height: 100%;
+    }
+
+/* Styling for links and how it appears for the user */
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+
+
+.highlighted-text {
+  font-size: 12px
+  color: black;
+}
+.highlighted-text a:hover {
+  /* Styling for the hover effect */
+  font-weight: bold;
+ text-decoration: none !important;
+}
+
+/*parallax affect html*/
+</style>
+</head>
+<body>
+<!-- Main Page section and Header section -->
+  <section class="head">
+    <!-- Menu bar that contains the logo-->
+    <div class="menu-bar">
+      <nav>
+        <div class="logo">
+          <a href="index.html"><img src="logo.jpg" alt="Logo"></a>
+        </div>
+      </nav>
+    </div>
+
+
+  <div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('dining.jpg');"></div>
+  <img class="scroll-image" src="scroll.gif" alt="Scroll Image" width="100" height="50">
+</div>
+<div class="parallax-text">
+  <h1>Dining</h1>
+  <p style="font-size: 12px;">NYU Abu Dhabi offers diverse dining facilities with a focus on quality, variety, and sustainability. From international flavors to regional specialties, students and staff enjoy a wide array of cuisines. The dining halls and cafes provide a welcoming environment for socializing. Sustainability is prioritized through eco-friendly practices.</p>
+  <p class="highlighted-text"><a href="https://nyuad.nyu.edu/en/campus-life/housing/dining.html">Click here for more!</a></p> <!--takes the user directly to nyuad web pages--> 
+</div>
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('run.jpg');"></div>
+  <img class="scroll-image" src="scroll.gif" alt="Scroll Image" width="100" height="50">
+  <div class="parallax-text">
+    <h1>Sports</h1>
+    <p style="font-size: 12px;">Experience NYU Abu Dhabi's inclusive sports facilities, offering a variety of activities tailored to all fitness levels. You can enjoy state-of-the-art equipment, expert trainers, gyms, and women-only classes, fostering a supportive environment.</p>
+    <p class="highlighted-text"><a href="https://nyuad.nyu.edu/en/campus-life/athletics-and-fitness.html">Click here for more!</a></p><!--takes the user directly to nyuad web pages--> 
+  </div>
+</div>
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('dorm.jpg');"></div>
+  <img class="scroll-image" src="scroll.gif" alt="Scroll Image" width="100" height="50">
+  <div class="parallax-text">
+    <h1>Dorm Life</h1>
+    <p style="font-size: 12px;">Discover the extraordinary dorm experience at NYU Abu Dhabi, where cultural diversity and shared adventures create lifelong memories. Immerse yourself in state-of-the-art facilities, comfortable living spaces, and a close-knit community that fosters personal growth.</p>
+    <p class="highlighted-text"><a href="https://nyuad.nyu.edu/en/campus-life/housing/residences/undergraduate.html">Click here for more!</a></p><!--takes the user directly to nyuad web pages--> 
+  </div>
+</div>
+
+<div class="parallax-container">
+  <div class="parallax-image" style="background-image: url('lib.jpg');"></div>
+  <div class="parallax-text">
+    <h1>Research</h1>
+    <p style="font-size: 12px;">Unleash your intellectual curiosity at NYU Abu Dhabi's library. Discover limitless knowledge, cutting-edge resources, and innovative technologies for transformative research. Explore new frontiers, collaborate, and expand your horizons in a vibrant academic environment. Experience the power of knowledge at NYU Abu Dhabi's exceptional library.</p>
+    <p class="highlighted-text"><a href="https://nyuad.nyu.edu/en/library.html">Click here for more!</a></p><!--takes the user directly to nyuad web pages--> 
+  </div>
+</div>
+
+</body>
+</html>
