@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Ghalia's Portfolio</title>
+
+<header class="navbar">
+  <div class="logo">
+    <!-- logo -->
+    <p>My Journey</p>
+
+  </div>
+  <nav class="menu">
+    <!-- menu items -->
+    <img class="menu-icon" src="menu.png" alt="Menu Icon">
+    <ul class="dropdown-menu">
+      <li><a href="index.html" style="font-family: inherit; color: Black;">Main Page</a></li>
+    <li><a href="myworks.html" style="font-family: inherit; color: black;">My Works</a></li>
+    <li><a href="aboutme.html" style="font-family: inherit; color: black;">About Me</a></li>
+    </ul>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- Page contents -->
+<div class="page">
+
+    <h1 class="text1" style="text-shadow: 2px 2px 4px violet;">Credits</h1>
+
+    <div class="text-container">
+    <div class="text">
+    <h2>Image Credits:</h2>
+    <ul>
+        <li>"NYU Image" : <a href="https://example.com"style="color: white;">NYUAD</a></li>
+        <li>"Observation night Image" : <a href=" https://en.wikipedia.org/wiki/Outline_of_space_science"style="color: white;">Wikipedia</a></li>
+        <li>"Coding image" : <a href="https://skill-lync.com/blogs/coding-vs-programming-differences-you-should-be-aware"style="color: white;">Skill-lync</a></li>
+        <li>"NYU Image" : <a href="https://nyuad.nyu.edu/en/academics/undergraduate/majors-and-minors/interactive-media-minor.html"style="color: white;"> NYUAD </a></li>
+        <li>"Tech Gif" : <a href= "https://gifer.com/en/7vVI"style="color: white;">GIFER</a><li>
+        <li>"Horse Image" : <a href= "https://gfycat.com/ko/insecuresandyarmedcrab"style="color: white;">gfycat</a><li>
+        <li>"Scroll Down" : <a href= "https://ar.europeanwriterstour.com/images-2023/scroll-down-arrow-gif"style="color: white;">europeanwriterstour</a><li>
+        <li>"Astronout"  : <a href= "https://www.popularmechanics.com/space/g25941053/famous-space-missions-through-history/"style="color: white;">popularmechanics</a><li>"Stars" : <a href= "https://www.sciencenews.org/article/favorite-top-space-images-of-all-time"style="color: white;">Science news</a><li>
+        <li>"Astronomy" : <a href= "https://dribbble.com/shots/4517100-Astronomy-Day"style="color: white;">Dribble</a><li>
+
+    <h2>GitHub</h2>
+    <li>"Check My GitHub Account for more!" : <a href="https://github.com/Ghaliaalmatroushi/Ghaliaalmatroushi.github.io"style="color: lightgreen;">Ghalia's GitHub</a></li>
+
+    </ul>
+
+    
+    </ul>
+
+</div>
+</div>
+</div>
+<script>
+
+    /*################  Scroll Function to keep navigation bar in place #####################*/
+
+          $(document).ready(function() {
+  // Get the initial position of the navbar
+  var navbarOffset = $('.navbar').offset().top;
+
+  $(window).scroll(function() {
+    // Check if the user has scrolled past the navbar
+    if ($(window).scrollTop() > navbarOffset) {
+      // Add a CSS class to make the navbar sticky
+      $('.navbar').addClass('sticky');
+    } else {
+      // Remove the sticky class if the user scrolls back up
+      $('.navbar').removeClass('sticky');
+    }
+  });
+});
+
+/*################  Drop down Menu function #####################*/
+  $(document).ready(function() {
+  $(".menu-icon").click(function() {
+    $(".dropdown-menu").slideToggle();
+  });
+});
+
+
+</script>
+<style>
+
+/*Page styles */
+
+.page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/*Title */
+.page .text1 {
+   font-family: 'Playfair Display', serif; 
+    font-size: 50px; 
+    color: white;
+    font-weight: bold;
+    margin-bottom: 45%;
+    text-align: center;
+    margin-left: 40%;
+}
+
+
+
+/*Navigation bar*/
+body {
+  /* Adding some padding to to avoid overlapping with the fixed menu */
+  padding-top: 50px;
+  background-color: black;
+
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+ 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  animation: pulse 5s infinite;
+ position: absolute;
+  right: 80%;
+
+}
+
+@keyframes pulse {
+  0% {
+    color: white;
+    transform: scale(1);
+  }
+  50% {
+    color: white;
+    transform: scale(1.2);
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+  }
+}
+/*################################################*/
+.menu img{
+margin-top: 15px;
+ margin-left: 92%;
+  width: 80px; /* Adjust the width as needed */
+  height: 80px;
+  position: relative;
+
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 24px;
+  background-color: black;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+   z-index: 5;
+
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+transform: scale(1.2);
+}
+
+
+.dropdown-menu li {
+    list-style: none;
+   margin-bottom: 2px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5;
+    z-index: 3;
+}
+
+
+.dropdown-menu.open {
+  display: block;
+  z-index: 10; 
+}
+
+/*##############################################*/
+
+
+.text {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  letter-spacing: 2px; 
+  z-index: 3;
+  color:white;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 46.5%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+
+
+
+</style>
+
+</head>
+</html>

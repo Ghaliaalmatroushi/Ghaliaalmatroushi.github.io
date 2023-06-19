@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Ghalia's Portfolio</title>
+ 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- First Page -->
+  <header class="navbar">
+  <div class="logo">
+    <!-- logo in text  -->
+    <p>My Journey</p>
+
+  </div>
+  <nav class="menu">
+    <!-- menu items -->
+    <img class="menu-icon" src="menu.png" alt="Menu Icon">
+    <ul class="dropdown-menu">
+    <li><a href="myworks.html" style="font-family: inherit; color: black;">My Works</a></li>
+    <li><a href="aboutme.html" style="font-family: inherit; color: black;">About Me</a></li>
+    <li><a href="credits.html" style="font-family: inherit; color: black;">Credits</a></li>
+    </ul>
+  </nav>
+
+</header>
+  
+  <!-- First Page Contents -->
+    <div class="page">
+
+    <h1 class="left-text" style="text-shadow: 2px 2px 4px violet;">Exploring My Universe<br>and Its Stars</h1>
+ <!-- slideshow images for main page -->
+    <p class="name">Ghalia Almatroushi</p>
+    <div class="slideshow-container">
+        <img class="mySlides" src="image1.jpg">
+        <img class="mySlides" src="image2.jpg">
+        <img class="mySlides" src="image3.jpg">
+        <img class="mySlides" src="image4.jpg">
+    </div>
+
+
+<a href="aboutme.html" class="button-link">About Me</a>
+<img src="scroll.gif" alt="Scroll Down"class="scroll-icon">>
+
+</div>
+    </div>
+
+
+    <!-- Second Page -->
+    <div class="page-2">
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="gazing.gif" alt="Image 1">
+        <h1 class="text2" style="text-shadow: 2px 2px 4px orange;"></h1>
+        <div class="description">
+          <h3><a href="https://ghaliaalmatroushi.github.io/Sound%20assignment/" class="title-link" style="font-family: inherit;">Sound Based Project</a></h3>
+          <p>Description 1</p>
+        </div>
+        <div class="arrows">
+          <div class="arrow left">&lt;</div>
+          <div class="arrow right">&gt;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- message for the user to access website projects -->
+  <div class="message-container">
+    <div class="alert alert-info alert-dismissible fade show custom-alert" role="alert">
+      <strong>Note:Click the title of the work below to view it !!</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <style>
+/* Message for the user to inform them to click title names for project access */
+.message-container {
+  position: fixed;
+  bottom: 50px; /* Adjust this value to move the message box up or down */
+  right: 10px;
+  z-index: 9999;
+}
+
+.custom-alert {
+  color: white;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: black;
+}
+  </style>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+
+ <script>
+
+
+// Image gallery functionality
+const images = ["gazing.gif", "reading.gif", "horse3.gif", "tech.gif"]; // Replace with your image URLs
+const imageLinks = ["https://ghaliaalmatroushi.github.io/Sound%20assignment/", "https://ghaliaalmatroushi.github.io/Website1project/", "https://aishaalketbi.github.io/Interactive_Comic/", "https://ghaliaalmatroushi.github.io/Drums/"]; // Replace with your image links
+let currentImage = 0;
+const descriptions = ["Journey Through the Forest Group Task", "30MFF Website", "Time Travel Comic Group Task", "Guide To Drums"]; // Replace with your descriptions
+const imageNames = ["Sound Based Project", "First Website", "Interactive Comic", "Video Project"];
+
+const gallery = document.querySelector(".gallery");
+const prevArrow = document.querySelector(".arrow.left");
+const nextArrow = document.querySelector(".arrow.right");
+
+function showImage() {
+  const image = images[currentImage];
+  const link = imageLinks[currentImage];
+  const description = descriptions[currentImage];
+  const imageName = imageNames[currentImage];
+
+  gallery.querySelector("img").src = image;
+  gallery.querySelector("h3 a").textContent = imageName;
+  gallery.querySelector("h3 a").href = link;
+  gallery.querySelector("p").textContent = description;
+}
+
+
+
+function goToPreviousImage() {
+  currentImage = (currentImage - 1 + images.length) % images.length;
+  showImage();
+}
+
+function goToNextImage() {
+  currentImage = (currentImage + 1) % images.length;
+  showImage();
+}
+
+prevArrow.addEventListener("click", goToPreviousImage);
+nextArrow.addEventListener("click", goToNextImage);
+
+showImage();
+
+/*################  Scroll Function to keep navigation bar in place #####################*/
+
+          $(document).ready(function() {
+  // Get the initial position of the navbar
+  var navbarOffset = $('.navbar').offset().top;
+
+  $(window).scroll(function() {
+    // Check if the user has scrolled past the navbar
+    if ($(window).scrollTop() > navbarOffset) {
+      // Add a CSS class to make the navbar sticky
+      $('.navbar').addClass('sticky');
+    } else {
+      // Remove the sticky class if the user scrolls back up
+      $('.navbar').removeClass('sticky');
+    }
+  });
+});
+
+/*################  Drop down Menu function #####################*/
+  $(document).ready(function() {
+  $(".menu-icon").click(function() {
+    $(".dropdown-menu").slideToggle();
+  });
+});
+
+
+/*################  Slide Show effect #####################*/
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {
+        slideIndex = 1;
+    }
+    x[slideIndex - 1].style.display = "block";
+    setTimeout(carousel, 2000); // Change every 2 seconds
+}
+
+
+
+
+
+
+/*################  Typing text effect #####################*/
+window.onload = function() {
+        var h1 = document.querySelector('.text2');
+        var text = "My Works1";
+        var delay = 200; // Delay between each character (in milliseconds)
+        var pause = 2000; // Delay before typing again (in milliseconds)
+
+
+        function typeWriter() {
+            var currentIndex = 0;
+            var interval = setInterval(function() {
+                h1.textContent += text[currentIndex];
+                currentIndex++;
+                if (currentIndex === text.length) {
+                    clearInterval(interval);
+                    h1.textContent = ""; // Clear the text for the next cycle
+                    setTimeout(typeWriter, delay); // type again after a delay
+                }
+            }, delay);
+        }
+
+        typeWriter();
+};
+
+/*################  Messg #####################*/
+
+
+
+window.addEventListener("scroll", function() {
+      var messageBox = document.getElementById("messageBox");
+      var page2 = document.querySelector(".page-2");
+      var page2OffsetTop = page2.offsetTop;
+      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollPosition >= page2OffsetTop) {
+        messageBox.style.opacity = 1;
+      } else {
+        messageBox.style.opacity = 0;
+      }
+    });
+
+
+    </script>
+</body>
+</html>
+
+

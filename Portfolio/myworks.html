@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<header class="navbar">
+  <div class="logo">
+    <!-- logo   -->
+    <p>My Journey</p>
+
+  </div>
+  <nav class="menu">
+    <!-- menu items -->
+    <img class="menu-icon" src="menu.png" alt="Menu Icon">
+    <ul class="dropdown-menu">
+    <li><a href="index.html" style="font-family: inherit; color: Black;">Main Page</a></li>
+    <li><a href="aboutme.html" style="font-family: inherit; color: black;">About Me</a></li>
+    <li><a href="credits.html" style="font-family: inherit; color: black;">Credits</a></li>
+    </ul>
+  </nav>
+
+</header>
+<!-- Page 2 : Contains my works for the user to quickly check it through the main page -->
+<div class="page-2">
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="gazing.gif" alt="Image 1">
+        <h1 class="text2" style="text-shadow: 2px 2px 4px orange;"></h1>
+        <div class="description">
+          <h3><a href="https://ghaliaalmatroushi.github.io/Sound%20assignment/" class="title-link" style="font-family: inherit;">Sound Based Project</a></h3>
+          <p>Description 1</p>
+        </div>
+        <div class="arrows">
+          <div class="arrow left">&lt;</div>
+          <div class="arrow right">&gt;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Page 2 : message to inform the user about accessing my web pages or works -->
+  <div class="message-container">
+    <div class="alert alert-info alert-dismissible fade show custom-alert" role="alert">
+      <strong>Note:Click the title of the work below to view it !!</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- css section -->
+  <style>
+
+/*Same styles used in main page */
+
+/*Styling text*/
+ .page-2 .text2 {
+ 
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    display: inline;
+
+}
+
+.text2 {
+    transform: perspective(500px) rotateY(45deg);
+}
+
+/*Creating the message for the user*/
+
+.message-container {
+  position: fixed;
+  bottom: 50px; /* Adjust this value to move the message box up or down */
+  right: 10px;
+  z-index: 9999;
+}
+
+.custom-alert {
+  color: white;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+/* Menu and navigation bar section */
+ .menu img	{
+margin-top: 15px;
+ margin-left: 92%;
+  width: 80px; /* Adjust the width as needed */
+  height: 80px;
+  position: relative;
+
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 24px;
+  background-color: black;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+   z-index: 5;
+
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+transform: scale(1.2);
+}
+
+
+.dropdown-menu li {
+    list-style: none;
+    margin-bottom: 2px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5;
+    z-index: 3;
+    color: black;
+}
+
+
+.dropdown-menu.open {
+  display: block;
+  z-index: 10; /* Set a higher z-index than the slideshow when the dropdown is open */
+  color: black;
+}
+
+/* Gallery where I represent my interests in the pictures */
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+.gallery {
+    position: relative;
+    width: 500px; 
+    height: 500px; 
+}
+.gallery img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+.gallery .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+   .gallery .arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+}
+.gallery .arrows .arrow {
+    position: relative;
+    color: black;
+    font-size: 45px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 70%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, width 0.3s, height 0.3s;
+}
+.gallery .arrows .arrow:hover {
+    width: 50px;
+    height: 50px;
+    transform: scale(1.2);
+}
+
+.gallery .arrows .arrow.next {
+    margin-right: 100px; /* Added margin for spacing */
+}
+.gallery .arrows .arrow.prev {
+    margin-left: 100px; /* Added margin for spacing */
+}
+.gallery .arrows .arrow.right {
+    position: absolute;
+    right: -35%;
+}
+.gallery .arrows .arrow.left {
+    position: absolute;
+    left: -35%;
+}
+
+.gallery .description h3 a.title-link {
+  transition: all 0.3s;
+  color: white;
+  text-decoration: none;
+}
+
+.gallery .description h3 a.title-link:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/*################################################*/
+body {
+  /* Add some padding to the body to avoid overlapping with the fixed menu */
+  padding-top: 50px;
+  background-color: black;
+
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  /* Add any other desired styles for your menu */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  animation: pulse 5s infinite;
+ position: absolute;
+  right: 80%;
+
+}
+
+@keyframes pulse {
+  0% {
+    color: white;
+    transform: scale(1);
+  }
+  50% {
+    color: white;
+    transform: scale(1.2);
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+  }
+}
+  </style>
+
+  <!-- Including Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  
+// Image gallery functionality
+const images = ["gazing.gif", "reading.gif", "horse3.gif", "tech.gif"]; // Replace with your image URLs
+const imageLinks = ["https://ghaliaalmatroushi.github.io/Sound%20assignment/", "https://ghaliaalmatroushi.github.io/Website1project/", "https://aishaalketbi.github.io/Interactive_Comic/", "https://ghaliaalmatroushi.github.io/Drums/"]; // Replace with your image links
+let currentImage = 0;
+const descriptions = ["Journey Through the Forest Group Task", "30MFF Website", "Time Travel Comic Group Task", "Guide To Drums"]; // Replace with your descriptions
+const imageNames = ["Sound Based Project", "First Website", "Interactive Comic", "Video Project"];
+
+const gallery = document.querySelector(".gallery");
+const prevArrow = document.querySelector(".arrow.left");
+const nextArrow = document.querySelector(".arrow.right");
+
+function showImage() {
+  const image = images[currentImage];
+  const link = imageLinks[currentImage];
+  const description = descriptions[currentImage];
+  const imageName = imageNames[currentImage];
+
+  gallery.querySelector("img").src = image;
+  gallery.querySelector("h3 a").textContent = imageName;
+  gallery.querySelector("h3 a").href = link;
+  gallery.querySelector("p").textContent = description;
+}
+
+
+
+function goToPreviousImage() {
+  currentImage = (currentImage - 1 + images.length) % images.length;
+  showImage();
+}
+
+function goToNextImage() {
+  currentImage = (currentImage + 1) % images.length;
+  showImage();
+}
+
+prevArrow.addEventListener("click", goToPreviousImage);
+nextArrow.addEventListener("click", goToNextImage);
+
+showImage();
+
+/*################  Scroll Function to keep navigation bar in place #####################*/
+
+          $(document).ready(function() {
+  // Get the initial position of the navbar
+  var navbarOffset = $('.navbar').offset().top;
+
+  $(window).scroll(function() {
+    // Check if the user has scrolled past the navbar
+    if ($(window).scrollTop() > navbarOffset) {
+      // Add a CSS class to make the navbar sticky
+      $('.navbar').addClass('sticky');
+    } else {
+      // Remove the sticky class if the user scrolls back up
+      $('.navbar').removeClass('sticky');
+    }
+  });
+});
+
+/*################  Drop down Menu function #####################*/
+  $(document).ready(function() {
+  $(".menu-icon").click(function() {
+    $(".dropdown-menu").slideToggle();
+  });
+});
+
+
+/*################  Typing text effect #####################*/
+window.onload = function() {
+        var h1 = document.querySelector('.text2');
+        var text = "My Works1";
+        var delay = 200; // Delay between each character (in milliseconds)
+        var pause = 2000; // Delay before typing again (in milliseconds)
+
+
+        function typeWriter() {
+            var currentIndex = 0;
+            var interval = setInterval(function() {
+                h1.textContent += text[currentIndex];
+                currentIndex++;
+                if (currentIndex === text.length) {
+                    clearInterval(interval);
+                    h1.textContent = ""; // Clear the text for the next cycle
+                    setTimeout(typeWriter, delay); // Start typing again after a delay
+                }
+            }, delay);
+        }
+
+        typeWriter();
+};
+
+/*################  Messg #####################*/
+
+
+
+window.addEventListener("scroll", function() {
+      var messageBox = document.getElementById("messageBox");
+      var page2 = document.querySelector(".page-2");
+      var page2OffsetTop = page2.offsetTop;
+      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollPosition >= page2OffsetTop) {
+        messageBox.style.opacity = 1;
+      } else {
+        messageBox.style.opacity = 0;
+      }
+    });
+
+
+ </script>
+
+
+</head>
+</html>
